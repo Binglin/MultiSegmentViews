@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56259E4E1B0DC50900E5DC7D /* MultiSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */; };
 		5682F0DE1B0DAE8900D2F81D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0DD1B0DAE8900D2F81D /* main.m */; };
 		5682F0E11B0DAE8900D2F81D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0E01B0DAE8900D2F81D /* AppDelegate.m */; };
 		5682F0E41B0DAE8900D2F81D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0E31B0DAE8900D2F81D /* ViewController.m */; };
@@ -14,6 +15,7 @@
 		5682F0E91B0DAE8900D2F81D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5682F0E81B0DAE8900D2F81D /* Images.xcassets */; };
 		5682F0EC1B0DAE8900D2F81D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5682F0EA1B0DAE8900D2F81D /* LaunchScreen.xib */; };
 		5682F0F81B0DAE8900D2F81D /* MultiSegmentControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0F71B0DAE8900D2F81D /* MultiSegmentControllerTests.m */; };
+		5682F1031B0DAEE700D2F81D /* BIArrowRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F1021B0DAEE700D2F81D /* BIArrowRectView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56259E4C1B0DC50900E5DC7D /* MultiSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSegmentControl.h; sourceTree = "<group>"; };
+		56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSegmentControl.m; sourceTree = "<group>"; };
 		5682F0D81B0DAE8900D2F81D /* MultiSegmentController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiSegmentController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5682F0DC1B0DAE8900D2F81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5682F0DD1B0DAE8900D2F81D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		5682F0F11B0DAE8900D2F81D /* MultiSegmentControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiSegmentControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5682F0F61B0DAE8900D2F81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5682F0F71B0DAE8900D2F81D /* MultiSegmentControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiSegmentControllerTests.m; sourceTree = "<group>"; };
+		5682F1011B0DAEE700D2F81D /* BIArrowRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIArrowRectView.h; sourceTree = "<group>"; };
+		5682F1021B0DAEE700D2F81D /* BIArrowRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIArrowRectView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +89,12 @@
 			children = (
 				5682F0DF1B0DAE8900D2F81D /* AppDelegate.h */,
 				5682F0E01B0DAE8900D2F81D /* AppDelegate.m */,
+				5682F1011B0DAEE700D2F81D /* BIArrowRectView.h */,
+				5682F1021B0DAEE700D2F81D /* BIArrowRectView.m */,
 				5682F0E21B0DAE8900D2F81D /* ViewController.h */,
 				5682F0E31B0DAE8900D2F81D /* ViewController.m */,
+				56259E4C1B0DC50900E5DC7D /* MultiSegmentControl.h */,
+				56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */,
 				5682F0E51B0DAE8900D2F81D /* Main.storyboard */,
 				5682F0E81B0DAE8900D2F81D /* Images.xcassets */,
 				5682F0EA1B0DAE8900D2F81D /* LaunchScreen.xib */,
@@ -220,8 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5682F0E41B0DAE8900D2F81D /* ViewController.m in Sources */,
+				56259E4E1B0DC50900E5DC7D /* MultiSegmentControl.m in Sources */,
 				5682F0E11B0DAE8900D2F81D /* AppDelegate.m in Sources */,
 				5682F0DE1B0DAE8900D2F81D /* main.m in Sources */,
+				5682F1031B0DAEE700D2F81D /* BIArrowRectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MultiSegmentController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MultiSegmentController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +432,7 @@
 				5682F0FD1B0DAE8900D2F81D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5682F0FE1B0DAE8900D2F81D /* Build configuration list for PBXNativeTarget "MultiSegmentControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +441,7 @@
 				5682F1001B0DAE8900D2F81D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
