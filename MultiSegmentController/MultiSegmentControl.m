@@ -80,15 +80,20 @@
     return [self initWithFrame:frame segmentItems:segmentItems_];
 }
 
-- (void)selectItem:(id<SegmentItemProtocol>)btn{
-
-    [self.segmentItems enumerateObjectsUsingBlock:^(id<SegmentItemProtocol> obj, NSUInteger idx, BOOL *stop) {
-        obj.selected = NO;
-    }];
-    btn.selected = YES;
+- (void)setSelectIndex:(NSInteger)selectIndex{
+    _selectIndex = selectIndex;
     
-    UIView *selectedView = (UIView *)btn;
+    [self animateToIndex:selectIndex];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(segmentControlDidSelectIndex:)]) {
+        [self.delegate segmentControlDidSelectIndex:selectIndex];
+    }
+}
 
+
+- (void)animateToIndex:(NSInteger)selectIndex{
+    UIView *selectedView = (UIView *)[self.segmentItems objectAtIndex:selectIndex];
+    
     CGRect destinationRect = ({CGRect frame_  = _arrowRectView.frame;
         frame_.origin.x = selectedView.frame.origin.x ;
         frame_.size.width = CGRectGetWidth(selectedView.frame);
@@ -114,17 +119,22 @@
     }
 }
 
+- (void)selectItem:(id<SegmentItemProtocol>)btn{
+
+    [self.segmentItems enumerateObjectsUsingBlock:^(id<SegmentItemProtocol> obj, NSUInteger idx, BOOL *stop) {
+        obj.selected = NO;
+    }];
+    btn.selected = YES;
+    
+    self.selectIndex = [self.segmentItems indexOfObject:btn];
+}
+
 - (void)layoutSegments{
     
 }
 
 
 @end
-
-
-
-
-
 
 
 
@@ -141,6 +151,10 @@
             maxWidth = seg_width;
         }
     }];
+    
+    if (maxWidth * self.segmentItems.count < CGRectGetWidth(self.frame)) {
+        maxWidth = CGRectGetWidth(self.frame)/self.segmentItems.count;
+    }
     [self.segmentItems enumerateObjectsUsingBlock:^(UIView * segment, NSUInteger idx, BOOL *stop) {
         segment.frame  = ({CGRect frame = segment.frame; frame.origin.x = idx * maxWidth; frame.size.width = maxWidth; frame;});
     }];

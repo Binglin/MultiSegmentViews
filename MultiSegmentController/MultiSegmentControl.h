@@ -14,6 +14,13 @@
 
 @end
 
+@protocol SegmentSelectProtocol <NSObject>
+
+@optional
+- (void)segmentControlDidSelectIndex:(NSInteger)index;
+
+@end
+
 @interface MultiSegmentControl : UIView
 
 //left rights
@@ -21,6 +28,8 @@
 @property (nonatomic, assign) BOOL         indicatorAnimate;
 @property (nonatomic, strong) UIView       * indicatorView;
 
+@property (nonatomic, assign) id<SegmentSelectProtocol> delegate;
+@property (nonatomic, assign) NSInteger    selectIndex;
 
 /**
  *  每个segment都需要实现SegmentItemProtocol 且每个item都需要是view的子类
@@ -31,6 +40,12 @@
  *  
  */
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)segmentTitles;
+
+
+/**
+ *  在segmentItem加到self上前 布局segmentItems
+ */
+- (void)layoutSegments;
 
 @end
 
