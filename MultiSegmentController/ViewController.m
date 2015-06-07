@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 
+@interface ViewController ()
+
+@end
+
 @implementation ViewController
 
 //
@@ -20,11 +24,18 @@
 - (void)loadMore:(BOOL)more{
     self.dataSources = [NSMutableArray arrayWithObjects:
                         @"ArrowRectViewController",
+                        @"GradientProgressController",
                         @"ProgressViewController",
                         @"AppleDownloadProgressController",
-                        @"VerticalRowScrollViewVC",nil];
+                        @"VerticalRowScrollViewVC",
+                        @"MultiSegmentController"
+                        ,nil];
     [self.tableView reloadData];
 
+}
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
 }
 
 

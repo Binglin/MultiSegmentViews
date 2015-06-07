@@ -31,6 +31,9 @@
 @property (nonatomic, assign) id<SegmentSelectProtocol> delegate;
 @property (nonatomic, assign) NSInteger    selectIndex;
 
+//底部线条
+@property (nonatomic, strong, readonly) UIView *    lineView;
+
 /**
  *  每个segment都需要实现SegmentItemProtocol 且每个item都需要是view的子类
  */
@@ -55,6 +58,18 @@
  *  各个segment item占比相同的segmentControl 默认宽度为最大的item
  */
 #pragma mark -
+
+//    SegmentItemAlignmentFull,
 @interface EqualWSegmentControl : MultiSegmentControl
 
 @end
+
+
+
+
+#pragma mark -
+//SegmentItemAlignmentCenter,仅适合少量item 布局中间显示
+@interface CenterSegmentControl : EqualWSegmentControl
+
+@end
+

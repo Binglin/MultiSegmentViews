@@ -22,7 +22,7 @@
 - (void)loadView{
     [super loadView];
     ProgressLayer *progress = [ProgressLayer layer];
-    progress.frame = CGRectMake(150, 100,60, 50);
+    progress.frame = CGRectMake(150, 100,60, 60);
     [self.view.layer addSublayer:progress];
     pLayer = progress;
 }

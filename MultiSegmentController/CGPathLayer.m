@@ -32,10 +32,10 @@
     self.path = [self getShapePath];
 }
 
-//- (void)layoutSublayers{
-//    [super layoutSublayers];
-//    self.path = [self getShapePath];
-//}
+- (void)layoutSublayers{
+    [super layoutSublayers];
+    self.path = [self getShapePath];
+}
 @end
 
 
