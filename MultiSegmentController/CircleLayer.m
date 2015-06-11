@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 Binglin. All rights reserved.
 //
 
-#import "CircleLalyer.h"
+#import "CircleLayer.h"
 
-@implementation CircleLalyer
+@implementation CircleLayer
 
 - (instancetype)init{
     if (self = [super init]) {

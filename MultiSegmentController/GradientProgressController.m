@@ -7,7 +7,9 @@
 //
 
 #import "GradientProgressController.h"
-#import "CircleLalyer.h"
+#import "CircleLayer.h"
+#import "GradientCircleLayer.h"
+#import "LayerCreator.h"
 
 @interface GradientProgressController ()
 
@@ -18,26 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    CircleLalyer *CIRCLE = [CircleLalyer layer];
+    
+    CALayer *CIRCLE = [LayerCreator createWithType:CircleLayerType_normal];
     CIRCLE.frame = CGRectMake(100, 100, 100, 100);
-    CIRCLE.backgroundColor = [UIColor grayColor].CGColor;
     [self.view.layer addSublayer:CIRCLE];
     
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.backgroundColor = [UIColor grayColor].CGColor;
-    gradient.frame = CGRectMake(0, 100, 100, 100);
+    CALayer *gradient = [LayerCreator createWithType:CircleLayerType_gradient];
+    gradient.frame =CGRectMake(0, 100, 100, 100);
     [self.view.layer addSublayer:gradient];
-    gradient.startPoint = CGPointMake(0.f, 0.5f);
-    gradient.endPoint   = CGPointMake(0.5f, 0.5f);
-    
-    gradient.colors = @[(id)[UIColor redColor].CGColor, (id)[UIColor yellowColor].CGColor, (id)[UIColor blueColor].CGColor];
-    
-    
-    
-    CircleLalyer *CIRCLE1 = [CircleLalyer layer];
-    CIRCLE1.frame = CGRectMake(0, 0, 100, 100);
-    
-    gradient.mask = CIRCLE1;
 }
 
 - (void)didReceiveMemoryWarning {

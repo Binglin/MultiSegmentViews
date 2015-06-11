@@ -24,7 +24,9 @@
 		45A081151B11FF070015B47C /* AppleDownloadProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A081141B11FF070015B47C /* AppleDownloadProgressController.m */; };
 		45A081181B11FF8F0015B47C /* MultiSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A081171B11FF8F0015B47C /* MultiSegmentController.m */; };
 		45BD69051B21A6B600021D3C /* GradientProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD69041B21A6B600021D3C /* GradientProgressController.m */; };
-		45BD69081B21A6E400021D3C /* CircleLalyer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD69071B21A6E400021D3C /* CircleLalyer.m */; };
+		45BD69081B21A6E400021D3C /* CircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD69071B21A6E400021D3C /* CircleLayer.m */; };
+		45BD693E1B24B21E00021D3C /* LayerCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD693D1B24B21E00021D3C /* LayerCreator.m */; };
+		45BD69411B24B2ED00021D3C /* GradientCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD69401B24B2ED00021D3C /* GradientCircleLayer.m */; };
 		56259E4E1B0DC50900E5DC7D /* MultiSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */; };
 		5682F0DE1B0DAE8900D2F81D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0DD1B0DAE8900D2F81D /* main.m */; };
 		5682F0E11B0DAE8900D2F81D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0E01B0DAE8900D2F81D /* AppDelegate.m */; };
@@ -81,8 +83,12 @@
 		45A081171B11FF8F0015B47C /* MultiSegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSegmentController.m; sourceTree = "<group>"; };
 		45BD69031B21A6B600021D3C /* GradientProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientProgressController.h; sourceTree = "<group>"; };
 		45BD69041B21A6B600021D3C /* GradientProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientProgressController.m; sourceTree = "<group>"; };
-		45BD69061B21A6E400021D3C /* CircleLalyer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleLalyer.h; sourceTree = "<group>"; };
-		45BD69071B21A6E400021D3C /* CircleLalyer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleLalyer.m; sourceTree = "<group>"; };
+		45BD69061B21A6E400021D3C /* CircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleLayer.h; sourceTree = "<group>"; };
+		45BD69071B21A6E400021D3C /* CircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleLayer.m; sourceTree = "<group>"; };
+		45BD693C1B24B21E00021D3C /* LayerCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerCreator.h; sourceTree = "<group>"; };
+		45BD693D1B24B21E00021D3C /* LayerCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerCreator.m; sourceTree = "<group>"; };
+		45BD693F1B24B2ED00021D3C /* GradientCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientCircleLayer.h; sourceTree = "<group>"; };
+		45BD69401B24B2ED00021D3C /* GradientCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientCircleLayer.m; sourceTree = "<group>"; };
 		56259E4C1B0DC50900E5DC7D /* MultiSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSegmentControl.h; sourceTree = "<group>"; };
 		56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSegmentControl.m; sourceTree = "<group>"; };
 		5682F0D81B0DAE8900D2F81D /* MultiSegmentController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiSegmentController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,10 +200,21 @@
 			children = (
 				45BD69031B21A6B600021D3C /* GradientProgressController.h */,
 				45BD69041B21A6B600021D3C /* GradientProgressController.m */,
-				45BD69061B21A6E400021D3C /* CircleLalyer.h */,
-				45BD69071B21A6E400021D3C /* CircleLalyer.m */,
+				45BD693C1B24B21E00021D3C /* LayerCreator.h */,
+				45BD693D1B24B21E00021D3C /* LayerCreator.m */,
+				45BD69061B21A6E400021D3C /* CircleLayer.h */,
+				45BD69071B21A6E400021D3C /* CircleLayer.m */,
+				45BD693F1B24B2ED00021D3C /* GradientCircleLayer.h */,
+				45BD69401B24B2ED00021D3C /* GradientCircleLayer.m */,
 			);
 			name = GradientProgress;
+			sourceTree = "<group>";
+		};
+		45BD693B1B24B15200021D3C /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Animate;
 			sourceTree = "<group>";
 		};
 		5682F0CF1B0DAE8900D2F81D = {
@@ -233,6 +250,7 @@
 				45BD69021B21A68C00021D3C /* GradientProgress */,
 				45A080F01B1099850015B47C /* VerticalRowScrollViewVC.h */,
 				45A080F11B1099850015B47C /* VerticalRowScrollViewVC.m */,
+				45BD693B1B24B15200021D3C /* Animate */,
 				5682F0E51B0DAE8900D2F81D /* Main.storyboard */,
 				5682F0E81B0DAE8900D2F81D /* Images.xcassets */,
 				5682F0EA1B0DAE8900D2F81D /* LaunchScreen.xib */,
@@ -377,6 +395,7 @@
 				45A080FF1B117B750015B47C /* ProgressLayer.m in Sources */,
 				45A0810C1B11FE6A0015B47C /* UITableViewCell+data_set.m in Sources */,
 				45A081181B11FF8F0015B47C /* MultiSegmentController.m in Sources */,
+				45BD69411B24B2ED00021D3C /* GradientCircleLayer.m in Sources */,
 				45A0810B1B11FE6A0015B47C /* BasedTableController.m in Sources */,
 				56259E4E1B0DC50900E5DC7D /* MultiSegmentControl.m in Sources */,
 				45BD69051B21A6B600021D3C /* GradientProgressController.m in Sources */,
@@ -384,11 +403,12 @@
 				45A0810F1B11FED50015B47C /* ArrowRectViewController.m in Sources */,
 				5682F0DE1B0DAE8900D2F81D /* main.m in Sources */,
 				45A080FC1B10A34F0015B47C /* AppleDownloadView.m in Sources */,
-				45BD69081B21A6E400021D3C /* CircleLalyer.m in Sources */,
+				45BD69081B21A6E400021D3C /* CircleLayer.m in Sources */,
 				45A080EE1B1091370015B47C /* YellowViewController.m in Sources */,
 				45A080E21B108D0B0015B47C /* MultiListView.m in Sources */,
 				5682F1031B0DAEE700D2F81D /* BIArrowRectView.m in Sources */,
 				459B3CD61B12039500568215 /* BaseViewController.m in Sources */,
+				45BD693E1B24B21E00021D3C /* LayerCreator.m in Sources */,
 				45A080EB1B10912A0015B47C /* BlueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

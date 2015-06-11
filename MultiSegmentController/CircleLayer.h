@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CGPathLayer.h"
 
-@interface CircleLalyer : CGPathLayer
+@interface CircleLayer : CGPathLayer
 
 @end
