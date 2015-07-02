@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		459B3CD61B12039500568215 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B3CD51B12039500568215 /* BaseViewController.m */; };
-		45A080E21B108D0B0015B47C /* MultiListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A080E11B108D0B0015B47C /* MultiListView.m */; };
 		45A080E51B10910F0015B47C /* RedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A080E41B10910F0015B47C /* RedViewController.m */; };
 		45A080E81B10911B0015B47C /* GreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A080E71B10911B0015B47C /* GreenViewController.m */; };
 		45A080EB1B10912A0015B47C /* BlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A080EA1B10912A0015B47C /* BlueViewController.m */; };
@@ -27,6 +26,7 @@
 		45BD69081B21A6E400021D3C /* CircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD69071B21A6E400021D3C /* CircleLayer.m */; };
 		45BD693E1B24B21E00021D3C /* LayerCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD693D1B24B21E00021D3C /* LayerCreator.m */; };
 		45BD69411B24B2ED00021D3C /* GradientCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BD69401B24B2ED00021D3C /* GradientCircleLayer.m */; };
+		561BD2591B3CEBEF00D2B04F /* MultiListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 561BD2581B3CEBEF00D2B04F /* MultiListView.m */; };
 		56259E4E1B0DC50900E5DC7D /* MultiSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */; };
 		5682F0DE1B0DAE8900D2F81D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0DD1B0DAE8900D2F81D /* main.m */; };
 		5682F0E11B0DAE8900D2F81D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682F0E01B0DAE8900D2F81D /* AppDelegate.m */; };
@@ -51,8 +51,6 @@
 /* Begin PBXFileReference section */
 		459B3CD41B12039500568215 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		459B3CD51B12039500568215 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		45A080E01B108D0B0015B47C /* MultiListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiListView.h; path = ../../blexample/BLExampleWorkspace/UIView/MultiListView.h; sourceTree = "<group>"; };
-		45A080E11B108D0B0015B47C /* MultiListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiListView.m; path = ../../blexample/BLExampleWorkspace/UIView/MultiListView.m; sourceTree = "<group>"; };
 		45A080E31B10910F0015B47C /* RedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedViewController.h; sourceTree = "<group>"; };
 		45A080E41B10910F0015B47C /* RedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedViewController.m; sourceTree = "<group>"; };
 		45A080E61B10911B0015B47C /* GreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenViewController.h; sourceTree = "<group>"; };
@@ -89,6 +87,8 @@
 		45BD693D1B24B21E00021D3C /* LayerCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerCreator.m; sourceTree = "<group>"; };
 		45BD693F1B24B2ED00021D3C /* GradientCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientCircleLayer.h; sourceTree = "<group>"; };
 		45BD69401B24B2ED00021D3C /* GradientCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientCircleLayer.m; sourceTree = "<group>"; };
+		561BD2571B3CEBEF00D2B04F /* MultiListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiListView.h; sourceTree = "<group>"; };
+		561BD2581B3CEBEF00D2B04F /* MultiListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiListView.m; sourceTree = "<group>"; };
 		56259E4C1B0DC50900E5DC7D /* MultiSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSegmentControl.h; sourceTree = "<group>"; };
 		56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSegmentControl.m; sourceTree = "<group>"; };
 		5682F0D81B0DAE8900D2F81D /* MultiSegmentController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiSegmentController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,8 +144,8 @@
 				45A081171B11FF8F0015B47C /* MultiSegmentController.m */,
 				56259E4C1B0DC50900E5DC7D /* MultiSegmentControl.h */,
 				56259E4D1B0DC50900E5DC7D /* MultiSegmentControl.m */,
-				45A080E01B108D0B0015B47C /* MultiListView.h */,
-				45A080E11B108D0B0015B47C /* MultiListView.m */,
+				561BD2571B3CEBEF00D2B04F /* MultiListView.h */,
+				561BD2581B3CEBEF00D2B04F /* MultiListView.m */,
 			);
 			name = MultiListView;
 			sourceTree = "<group>";
@@ -396,6 +396,7 @@
 				45A0810C1B11FE6A0015B47C /* UITableViewCell+data_set.m in Sources */,
 				45A081181B11FF8F0015B47C /* MultiSegmentController.m in Sources */,
 				45BD69411B24B2ED00021D3C /* GradientCircleLayer.m in Sources */,
+				561BD2591B3CEBEF00D2B04F /* MultiListView.m in Sources */,
 				45A0810B1B11FE6A0015B47C /* BasedTableController.m in Sources */,
 				56259E4E1B0DC50900E5DC7D /* MultiSegmentControl.m in Sources */,
 				45BD69051B21A6B600021D3C /* GradientProgressController.m in Sources */,
@@ -405,7 +406,6 @@
 				45A080FC1B10A34F0015B47C /* AppleDownloadView.m in Sources */,
 				45BD69081B21A6E400021D3C /* CircleLayer.m in Sources */,
 				45A080EE1B1091370015B47C /* YellowViewController.m in Sources */,
-				45A080E21B108D0B0015B47C /* MultiListView.m in Sources */,
 				5682F1031B0DAEE700D2F81D /* BIArrowRectView.m in Sources */,
 				459B3CD61B12039500568215 /* BaseViewController.m in Sources */,
 				45BD693E1B24B21E00021D3C /* LayerCreator.m in Sources */,
