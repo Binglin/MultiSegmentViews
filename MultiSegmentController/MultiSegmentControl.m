@@ -13,7 +13,6 @@
     UIScrollView *_scrollView;
     BIArrowRectView *_arrowRectView;
     UIView *_lineView;
-    UIView *contentScroll;
 }
 
 @property (nonatomic, strong) NSArray *segmentItems;
@@ -40,12 +39,12 @@
             /*
              *  不知道为什么 加一次界面很奇怪，但是多加一个就好了
              */
-            _scrollView                = [[UIScrollView alloc] initWithFrame:self.bounds];
-            [self addSubview:_scrollView];
+//            _scrollView                = [[UIScrollView alloc] initWithFrame:self.bounds];
+//            [self addSubview:_scrollView];
 
             _scrollView                = [[UIScrollView alloc] initWithFrame:self.bounds];
             [_scrollView setShowsHorizontalScrollIndicator:NO];
-            _scrollView.contentSize = CGSizeMake(CGRectGetMaxX(lastFrame), CGRectGetHeight(self.bounds));
+//            _scrollView.contentSize = CGSizeMake(CGRectGetMaxX(lastFrame), CGRectGetHeight(self.bounds));
 
             
             [self addSubview:_scrollView];

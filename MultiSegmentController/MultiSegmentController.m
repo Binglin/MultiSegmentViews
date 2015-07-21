@@ -19,8 +19,6 @@
 - (void)loadView{
     [super loadView];
     
-    
-    
     EqualWSegmentControl *control = [[EqualWSegmentControl alloc] initWithFrame:CGRectMake(0, 300, 320, 44.f) titles:@[@"red",@"blue",@"green",@"yellow"]];
     control.lineView.hidden = NO;
     control.indicatorView = ({UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(control.frame)-5, 10, 5.f)];
@@ -28,7 +26,7 @@
         view;
     });
     control.backgroundColor = [UIColor grayColor];
-    //    [self.view addSubview:control];
+//        [self.view addSubview:control];
     
     NSArray *classArr = @[[RedViewController class],
                           [BlueViewController class],

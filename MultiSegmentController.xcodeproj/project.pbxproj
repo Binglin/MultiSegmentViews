@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455A33451B2D4EFF0058F8A3 /* UIViewController+tableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455A33441B2D4EFF0058F8A3 /* UIViewController+tableView.m */; };
+		458D29BE1B3E3848007C5F32 /* UIViewController+commonUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 458D29BD1B3E3848007C5F32 /* UIViewController+commonUI.m */; };
+		458D29C11B3E385F007C5F32 /* PTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 458D29C01B3E385F007C5F32 /* PTNavigationBar.m */; };
+		458D29C51B3E387F007C5F32 /* CommonUIConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 458D29C31B3E387F007C5F32 /* CommonUIConsts.m */; };
 		459B3CD61B12039500568215 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B3CD51B12039500568215 /* BaseViewController.m */; };
 		45A080E21B108D0B0015B47C /* MultiListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A080E11B108D0B0015B47C /* MultiListView.m */; };
 		45A080E51B10910F0015B47C /* RedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A080E41B10910F0015B47C /* RedViewController.m */; };
@@ -49,6 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		455A33431B2D4EFF0058F8A3 /* UIViewController+tableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+tableView.h"; path = "../../BaseTableViewController/BaseTableViewController/UIViewController+tableView.h"; sourceTree = "<group>"; };
+		455A33441B2D4EFF0058F8A3 /* UIViewController+tableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+tableView.m"; path = "../../BaseTableViewController/BaseTableViewController/UIViewController+tableView.m"; sourceTree = "<group>"; };
+		458D29BC1B3E3848007C5F32 /* UIViewController+commonUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+commonUI.h"; path = "../../BaseTableViewController/BaseTableViewController/UIViewController+commonUI.h"; sourceTree = "<group>"; };
+		458D29BD1B3E3848007C5F32 /* UIViewController+commonUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+commonUI.m"; path = "../../BaseTableViewController/BaseTableViewController/UIViewController+commonUI.m"; sourceTree = "<group>"; };
+		458D29BF1B3E385F007C5F32 /* PTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTNavigationBar.h; path = ../../BaseTableViewController/BaseTableViewController/PTNavigationBar.h; sourceTree = "<group>"; };
+		458D29C01B3E385F007C5F32 /* PTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTNavigationBar.m; path = ../../BaseTableViewController/BaseTableViewController/PTNavigationBar.m; sourceTree = "<group>"; };
+		458D29C21B3E387F007C5F32 /* CommonUIConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonUIConsts.h; path = ../../BaseTableViewController/BaseTableViewController/CommonUIConsts.h; sourceTree = "<group>"; };
+		458D29C31B3E387F007C5F32 /* CommonUIConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonUIConsts.m; path = ../../BaseTableViewController/BaseTableViewController/CommonUIConsts.m; sourceTree = "<group>"; };
+		458D29C41B3E387F007C5F32 /* CommonUIEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonUIEnum.h; path = ../../BaseTableViewController/BaseTableViewController/CommonUIEnum.h; sourceTree = "<group>"; };
 		459B3CD41B12039500568215 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		459B3CD51B12039500568215 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		45A080E01B108D0B0015B47C /* MultiListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiListView.h; path = ../../blexample/BLExampleWorkspace/UIView/MultiListView.h; sourceTree = "<group>"; };
@@ -185,8 +198,17 @@
 		45A081061B11FE3F0015B47C /* BaseTableController */ = {
 			isa = PBXGroup;
 			children = (
+				458D29C21B3E387F007C5F32 /* CommonUIConsts.h */,
+				458D29C31B3E387F007C5F32 /* CommonUIConsts.m */,
+				458D29C41B3E387F007C5F32 /* CommonUIEnum.h */,
+				458D29BF1B3E385F007C5F32 /* PTNavigationBar.h */,
+				458D29C01B3E385F007C5F32 /* PTNavigationBar.m */,
+				458D29BC1B3E3848007C5F32 /* UIViewController+commonUI.h */,
+				458D29BD1B3E3848007C5F32 /* UIViewController+commonUI.m */,
 				45A081071B11FE6A0015B47C /* BasedTableController.h */,
 				45A081081B11FE6A0015B47C /* BasedTableController.m */,
+				455A33431B2D4EFF0058F8A3 /* UIViewController+tableView.h */,
+				455A33441B2D4EFF0058F8A3 /* UIViewController+tableView.m */,
 				45A081091B11FE6A0015B47C /* UITableViewCell+data_set.h */,
 				45A0810A1B11FE6A0015B47C /* UITableViewCell+data_set.m */,
 				459B3CD41B12039500568215 /* BaseViewController.h */,
@@ -389,16 +411,20 @@
 				45A080F21B1099850015B47C /* VerticalRowScrollViewVC.m in Sources */,
 				45A081121B11FEE40015B47C /* ProgressViewController.m in Sources */,
 				45A080E81B10911B0015B47C /* GreenViewController.m in Sources */,
+				458D29BE1B3E3848007C5F32 /* UIViewController+commonUI.m in Sources */,
+				458D29C51B3E387F007C5F32 /* CommonUIConsts.m in Sources */,
 				5682F0E41B0DAE8900D2F81D /* ViewController.m in Sources */,
 				45A080E51B10910F0015B47C /* RedViewController.m in Sources */,
 				45A081021B11C8410015B47C /* CGPathLayer.m in Sources */,
 				45A080FF1B117B750015B47C /* ProgressLayer.m in Sources */,
+				458D29C11B3E385F007C5F32 /* PTNavigationBar.m in Sources */,
 				45A0810C1B11FE6A0015B47C /* UITableViewCell+data_set.m in Sources */,
 				45A081181B11FF8F0015B47C /* MultiSegmentController.m in Sources */,
 				45BD69411B24B2ED00021D3C /* GradientCircleLayer.m in Sources */,
 				45A0810B1B11FE6A0015B47C /* BasedTableController.m in Sources */,
 				56259E4E1B0DC50900E5DC7D /* MultiSegmentControl.m in Sources */,
 				45BD69051B21A6B600021D3C /* GradientProgressController.m in Sources */,
+				455A33451B2D4EFF0058F8A3 /* UIViewController+tableView.m in Sources */,
 				5682F0E11B0DAE8900D2F81D /* AppDelegate.m in Sources */,
 				45A0810F1B11FED50015B47C /* ArrowRectViewController.m in Sources */,
 				5682F0DE1B0DAE8900D2F81D /* main.m in Sources */,
