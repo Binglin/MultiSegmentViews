@@ -31,7 +31,6 @@
                         @"MultiSegmentController"
                         ,nil];
     [self.tableView reloadData];
-
 }
 
 - (void)viewDidLoad{
