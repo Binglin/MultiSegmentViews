@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
 
-@interface MultiSegmentController : BaseViewController
+@interface MultiSegmentController : UIViewController
+
+@property (nonatomic, strong) NSArray<UIViewController *> *segmentItemsControllers;
+
 
 @end

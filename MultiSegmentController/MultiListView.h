@@ -1,6 +1,6 @@
 //
 //  MultiListView.h
-//  TreasureHunter
+//
 //
 //  Created by Zhenglinqin on 15/1/6.
 //
@@ -23,7 +23,7 @@
 @property (nonatomic, assign) id<SegmentSelectProtocol> delegate;
 
 //是否从第一个左划至最后一个
-@property (nonatomic, assign) BOOL couldCycle;
+//@property (nonatomic, assign) BOOL couldCycle;
 //左右滑动动画
 @property (nonatomic, assign) BOOL scrollAnimate;
 

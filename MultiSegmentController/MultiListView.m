@@ -1,6 +1,6 @@
 //
 //  MultiListView.m
-//  TreasureHunter
+//  
 //
 //  Created by Zhenglinqin on 15/1/6.
 //
@@ -9,7 +9,7 @@
 #import "MultiListView.h"
 
 
-@interface MultiListView ()<SegmentSelectProtocol>
+@interface MultiListView ()<SegmentSelectProtocol, UIScrollViewDelegate>
 {
     UISwipeGestureRecognizer *_leftSwipe;
     UISwipeGestureRecognizer *_rightSwipe;
@@ -26,31 +26,32 @@
         _segmentView.frame = CGRectMake(0, 0, CGRectGetWidth(selectView.frame), CGRectGetHeight(selectView.frame));
         _segmentView.delegate = self;
         [self addSubview:selectView];
-        [self addSwipeGestures];
         
         _scrollContainer = [[UIScrollView alloc] initWithFrame:({CGRect frame = self.frame; frame.origin.y = CGRectGetHeight(selectView.frame);frame.size.height -= CGRectGetHeight(selectView.frame); frame;})];
+        _scrollContainer.delegate = self;
+        _scrollContainer.scrollsToTop = NO;
+        _scrollContainer.pagingEnabled = YES;
+        _scrollContainer.contentSize = CGSizeMake(self.frame.size.width * self.viewControllers.count, CGRectGetHeight(self.frame));
+        [self addSubview:_scrollContainer];
+        _scrollContainer.backgroundColor = [UIColor whiteColor];
         
     }
     return self;
 }
 
-- (void)addSwipeGestures{
-    _leftSwipe  = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeExecute:)];
-    _rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeExecute:)];
-    _leftSwipe.direction  = UISwipeGestureRecognizerDirectionLeft;
-    _rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
-    [self addGestureRecognizer:_leftSwipe ];
-    [self addGestureRecognizer:_rightSwipe];
+#pragma mark - private
+- (void)showViewControllerAtIndex:(NSInteger)index{
+    if (index < 0 || index >= self.viewControllers.count) {
+        return;
+    }
     
-}
-
-- (void)swipeExecute:(UISwipeGestureRecognizer *)swipe{
-    NSUInteger viewControllerCount = self.viewControllers.count;
-    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
-        _segmentView.selectIndex = (self.selectIndex + 1 ) % viewControllerCount;
-//        [_segmentView changesViews:(self.selectIndex + 1 ) % viewControllerCount];
-    }else if (swipe.direction == UISwipeGestureRecognizerDirectionRight){
-        _segmentView.selectIndex = (self.selectIndex - 1 + viewControllerCount)%viewControllerCount;
+    UIViewController *indexVC  = self.viewControllers[index];
+    
+    
+    if (indexVC.parentViewController == nil) {
+        [self.superController addChildViewController:indexVC];
+        [_scrollContainer addSubview:indexVC.view];
+        indexVC.view.frame = CGRectMake( CGRectGetWidth(self.frame) * index, 0 , CGRectGetWidth(self.frame) ,CGRectGetHeight(self.frame) - CGRectGetHeight(_segmentView.frame));
     }
 }
 
@@ -62,21 +63,21 @@
 #pragma mark - SelectViewDelegate
 
 - (void)segmentControlDidSelectIndex:(NSInteger)tag{
-    _selectIndex = tag;
-    [self.selectedViewController removeFromParentViewController];
-    [self.selectedViewController.view removeFromSuperview];
-    @try {
+    
+    _selectIndex = tag ;
+
+    if (self.scrollAnimate) {
         self.selectedViewController = self.viewControllers[tag];
-        [self.superController addChildViewController:self.selectedViewController];
-        [self addSubview:self.selectedViewController.view];CGFloat ODD = 5;
-        self.selectedViewController.view.frame = CGRectMake(ODD, CGRectGetHeight(_segmentView.frame)+ODD, CGRectGetWidth(self.frame) - 2 * ODD,CGRectGetHeight(self.frame) - CGRectGetHeight(_segmentView.frame)-2 * ODD);
+        [self showViewControllerAtIndex:tag];
         [self.delegate segmentControlDidSelectIndex:tag];
-    }
-    @catch (NSException *exception) {
-        
-    }
-    @finally {
-        
+        _scrollContainer.contentOffset = CGPointMake(tag * CGRectGetWidth(self.frame), 0);
+    }else{
+        [self.selectedViewController removeFromParentViewController];
+        [self.selectedViewController.view removeFromSuperview];
+        self.selectedViewController = self.viewControllers[tag];
+        [self showViewControllerAtIndex:tag];
+        [self.delegate segmentControlDidSelectIndex:tag];
+        _scrollContainer.contentOffset = CGPointMake(tag * CGRectGetWidth(self.frame), 0);
     }
 }
 
@@ -84,5 +85,33 @@
     [self segmentControlDidSelectIndex:index];
 }
 
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    NSInteger floor = floorf(scrollView.contentOffset.x / scrollView.frame.size.width);
+    NSInteger ceil  = ceilf(scrollView.contentOffset.x / scrollView.frame.size.width);
+    
+    [self showViewControllerAtIndex:floor];
+    [self showViewControllerAtIndex:ceil];
+    
+    [_segmentView setIndicatorProgress:scrollView.contentOffset.x / (scrollView.contentSize.width - CGRectGetWidth(_segmentView.frame))];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSInteger floor = floorf(scrollView.contentOffset.x / scrollView.frame.size.width);
+    NSLog(@"aaa end %ld",(long)floor);
+    _segmentView.selectIndex = floor;
+}
+
+#pragma mark - override
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    _scrollContainer.frame = ({CGRect frame = self.frame;
+        frame.origin.y = CGRectGetHeight(_segmentView.frame);
+        frame.size.height -= CGRectGetHeight(_segmentView.frame);
+        frame;
+    });
+    _scrollContainer.contentSize = CGSizeMake(self.frame.size.width * self.viewControllers.count, CGRectGetHeight(self.frame) - _segmentView.frame.size.height);
+}
 
 @end

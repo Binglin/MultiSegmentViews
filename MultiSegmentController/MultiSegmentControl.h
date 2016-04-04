@@ -18,7 +18,7 @@
 
 @optional
 - (void)segmentControlDidSelectIndex:(NSInteger)index;
-
+- (void)segmentControlDeSelectIndex:(NSInteger)index;
 @end
 
 @interface MultiSegmentControl : UIView
@@ -26,6 +26,8 @@
 //left rights
 @property (nonatomic, assign) UIEdgeInsets segmentInsets;
 @property (nonatomic, assign) BOOL         indicatorAnimate;
+@property (nonatomic, assign) BOOL         sameIgnore;
+@property (nonatomic, assign) BOOL         sameDismiss;
 @property (nonatomic, strong) UIView       * indicatorView;
 
 @property (nonatomic, assign) id<SegmentSelectProtocol> delegate;
@@ -40,7 +42,7 @@
 - (instancetype)initWithFrame:(CGRect)frame segmentItems:(NSArray *)segments;
 
 /**
- *  
+ *
  */
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)segmentTitles;
 
@@ -49,6 +51,12 @@
  *  在segmentItem加到self上前 布局segmentItems
  */
 - (void)layoutSegments;
+- (void)addVerticalLines;
+- (void)reset;
+@property (nonatomic, readonly) NSArray *segmentItems;
+
+
+- (void)setIndicatorProgress:(CGFloat)progress;
 
 @end
 

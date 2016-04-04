@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E0CEEB70435B99EFF2C459A41A1849E67493E578",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E0CEEB70435B99EFF2C459A41A1849E67493E578" : 0,
+    "2BB0AB3ED41BB38CE1175373BD3020C16433612D" : 0,
+    "479FD31743229C00DA4A438E1BAE503AA3254EB4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9DB73BEC-6B63-4815-8010-5F10124BBEAC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E0CEEB70435B99EFF2C459A41A1849E67493E578" : "MultiSegmentViews",
+    "2BB0AB3ED41BB38CE1175373BD3020C16433612D" : "BaseTableViewController",
+    "479FD31743229C00DA4A438E1BAE503AA3254EB4" : "blexample"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MultiSegmentController",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MultiSegmentController.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Binglin\/BaseTableViewController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2BB0AB3ED41BB38CE1175373BD3020C16433612D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/binglin\/blexample.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "479FD31743229C00DA4A438E1BAE503AA3254EB4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Binglin\/MultiSegmentViews.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E0CEEB70435B99EFF2C459A41A1849E67493E578"
+    }
+  ]
+}

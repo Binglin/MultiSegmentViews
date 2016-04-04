@@ -7,12 +7,12 @@
 //
 
 #import "MultiSegmentControl.h"
-#import "BIArrowRectView.h"
 
 @interface MultiSegmentControl (){
     UIScrollView *_scrollView;
-    BIArrowRectView *_arrowRectView;
+    UIView *_arrowRectView;
     UIView *_lineView;
+    UIView *contentScroll;
 }
 
 @property (nonatomic, strong) NSArray *segmentItems;
@@ -39,33 +39,25 @@
             /*
              *  不知道为什么 加一次界面很奇怪，但是多加一个就好了
              */
-//            _scrollView                = [[UIScrollView alloc] initWithFrame:self.bounds];
-//            [self addSubview:_scrollView];
-
+            _scrollView                = [[UIScrollView alloc] initWithFrame:self.bounds];
+            _scrollView.scrollsToTop = NO;
+            [self addSubview:_scrollView];
+            
             _scrollView                = [[UIScrollView alloc] initWithFrame:self.bounds];
             [_scrollView setShowsHorizontalScrollIndicator:NO];
-//            _scrollView.contentSize = CGSizeMake(CGRectGetMaxX(lastFrame), CGRectGetHeight(self.bounds));
-
+            _scrollView.contentSize = CGSizeMake(CGRectGetMaxX(lastFrame), CGRectGetHeight(self.bounds));
+            
             
             [self addSubview:_scrollView];
         }
         
         [segments enumerateObjectsUsingBlock:^(UIView * segment, NSUInteger idx, BOOL *stop) {
+            [(UIButton *)segment addTarget:self action:@selector(selectItem:) forControlEvents:UIControlEventTouchUpInside];
             
             segment.center = CGPointMake(segment.center.x, CGRectGetMidY(self.bounds));
             [(_scrollView ? _scrollView  : self) addSubview:segment];
             
         }];
-        
-        UIView *first              = (UIView *)[segments firstObject];
-        [(id<SegmentItemProtocol>)first setSelected:YES];
-
-        _arrowRectView             = [[BIArrowRectView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds)-10.f, CGRectGetWidth(first.frame), 10.f)];
-        _arrowRectView.arrowHeight = 4.f;
-        self.indicatorView = _arrowRectView;
-        
-        
-        
     }
     return self;
 }
@@ -79,8 +71,8 @@
 
 - (UIView *)lineView{
     if (_lineView == nil) {
-        _lineView = _lineView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds), CGRectGetWidth(self.bounds), 1.f)];
-        _lineView.backgroundColor = [UIColor lightGrayColor];
+        _lineView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds)- 0.5f, CGRectGetWidth(self.bounds), .5f)];
+        _lineView.backgroundColor = [UIColor colorWithRed:236.f/255.f green:236.f/255.f blue:236.f/255.f alpha:1.f];
         [self addSubview:_lineView];
     }
     return _lineView;
@@ -95,11 +87,11 @@
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setTitle:obj forState:UIControlStateNormal];
             [button setTitle:obj forState:UIControlStateSelected];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+            [button.titleLabel setFont:[UIFont systemFontOfSize:14.0]];
+            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
             button.contentEdgeInsets = UIEdgeInsetsMake(5.f, 10.f, 5.f, 10.f);
             [button sizeToFit];
-            [button addTarget:self action:@selector(selectItem:) forControlEvents:UIControlEventTouchUpInside];
             button.frame = ({CGRect frame = button.frame;
                 frame.origin.x = lastX;
                 frame;});
@@ -112,7 +104,30 @@
 }
 
 - (void)setSelectIndex:(NSInteger)selectIndex{
+    if (self.sameIgnore && ( _selectIndex == selectIndex)) {
+        return;
+    }
     
+    if (self.sameDismiss && (_selectIndex == selectIndex))
+    {
+        if ([self.segmentItems[_selectIndex] selected])
+        {
+            [self.segmentItems[_selectIndex] setSelected:NO];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(segmentControlDeSelectIndex:)]) {
+                [self.delegate segmentControlDeSelectIndex:selectIndex];
+            }
+        }else{
+            [self.segmentItems[_selectIndex] setSelected:YES];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(segmentControlDidSelectIndex:)]) {
+                [self.delegate segmentControlDidSelectIndex:selectIndex];
+            }
+        }
+        return;
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(segmentControlDeSelectIndex:)]) {
+        [self.delegate segmentControlDeSelectIndex:selectIndex];
+    }
     [self.segmentItems[_selectIndex] setSelected:NO];
     _selectIndex = selectIndex;
     [self.segmentItems[_selectIndex] setSelected:YES];
@@ -155,7 +170,7 @@
 }
 
 - (void)selectItem:(id<SegmentItemProtocol>)btn{
-
+    
     
     
     self.selectIndex = [self.segmentItems indexOfObject:btn];
@@ -165,6 +180,30 @@
     
 }
 
+- (void)addVerticalLines{
+    [self.segmentItems enumerateObjectsUsingBlock:^(UIButton * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx < self.segmentItems.count - 1) {
+            //            CGFloat space = (45 - 20.)/2.f;
+            CGFloat lineHeight = 60.0;//obj.frame.size.height - 2 * space
+            CGFloat lineTop    = (obj.frame.size.height - lineHeight)/2.0;//space;
+            UIView *seperateLine = [[UIView alloc] initWithFrame:CGRectMake(obj.frame.size.width, lineTop, 0.5f, lineHeight)];
+            
+            //807D6C
+            seperateLine.backgroundColor = [UIColor colorWithRed: 0x80/ 255.0f green:0x7d / 255.f blue:0x6c/ 255.f alpha:1.0];//[UIColor colorWithRed:236.f/255.f green:236.f/255.f blue:236.f/255.f alpha:1.f];
+            [obj addSubview:seperateLine];
+        }
+    }];
+}
+
+- (void)reset{
+    [self.segmentItems[_selectIndex] setSelected:NO];
+}
+
+- (void)setIndicatorProgress:(CGFloat)progress{
+    CGRect fIndicator = self.indicatorView.frame;
+    fIndicator.origin.x = (CGRectGetWidth(self.frame) - CGRectGetWidth(fIndicator)) * progress;
+    self.indicatorView.frame = fIndicator;
+}
 
 @end
 
@@ -188,7 +227,13 @@
         maxWidth = CGRectGetWidth(self.frame)/self.segmentItems.count;
     }
     [self.segmentItems enumerateObjectsUsingBlock:^(UIView * segment, NSUInteger idx, BOOL *stop) {
-        segment.frame  = ({CGRect frame = segment.frame; frame.origin.x = idx * maxWidth; frame.size.width = maxWidth; frame;});
+        segment.frame  = ({CGRect frame = segment.frame;
+            frame.origin.x = idx * maxWidth;
+            frame.size.width = maxWidth;
+            if (frame.size.height < 1.f) {
+                frame.size.height = CGRectGetHeight(self.frame);
+            }
+            frame;});
     }];
 }
 
